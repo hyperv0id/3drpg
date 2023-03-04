@@ -5963,6 +5963,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e006444b017b58246a8479662f2aaa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  point: {fileID: 2800000, guid: 37bcb0e600f45d741900a2cf95593d47, type: 3}
+  doorway: {fileID: 2800000, guid: 52af2c601222d7c49899e61ba03bbe0d, type: 3}
+  attack: {fileID: 2800000, guid: c37320f1b888c3343bf3b1c8f341ad25, type: 3}
+  target: {fileID: 2800000, guid: 130145245c379c241b5e7e215cbb8d8b, type: 3}
+  arrow: {fileID: 2800000, guid: ab212ff9fdb185d41885d74feadf41dd, type: 3}
 --- !u!1001 &1338935893
 PrefabInstance:
   m_ObjectHideFlags: 0

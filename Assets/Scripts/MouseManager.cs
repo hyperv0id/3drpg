@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System;
+using System.Drawing;
 
 
 public class MouseManager : MonoBehaviour
 {
     public static MouseManager Instance;
 
+    [SerializeField]
+    Texture2D point, doorway, attack, target, arrow;
 
     public Action<Vector3> OnMouseClicked;
 
@@ -35,7 +38,14 @@ public class MouseManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo))//创建raycast，获取hitInfo
         {
-
+            // 切换鼠标贴图
+            switch (hitInfo.collider.gameObject.tag)
+            {
+                case "Ground":
+                    Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
+                    break;
+                
+            }
         }
     }
 

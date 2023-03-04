@@ -2,16 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
-[System.Serializable]
-public class EventVector3 : UnityEvent<Vector3> { }  //继承了vector3类型
-//这个class不是集成monobehaviour，需要被系统序列化才能在inspector现实出来
 
 public class MouseManager : MonoBehaviour
 {
-    public EventVector3 OnMouseClicked;
+    public static MouseManager Instance;
+
+
+    public Action<Vector3> OnMouseClicked;
 
     RaycastHit hitInfo;
+
+    private void Awake()
+    {
+        if(Instance != null)
+        {
+            Destroy(Instance);
+        }
+        Instance = this;
+    }
 
     void Update()
     {
